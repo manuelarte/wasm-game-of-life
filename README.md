@@ -76,9 +76,28 @@ Licensed under either of
 
 at your option.
 
-### Contribution
+### How To Run
 
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the Apache-2.0
-license, shall be dual licensed as above, without any additional terms or
-conditions.
+[Book](https://rustwasm.github.io/docs/book/introduction.html)
+
+To build use:
+
+> wasm-pack build
+
+To run it locally, go to the www folder
+
+> npm run start
+
+### Problems
+
+* can't start locally with error `BREAKING CHANGE: Since webpack 5 WebAssembly is not enabled by default and flagged as experimental feature.`
+* add the following part in webpack.config.js
+```javascript
+experiments: {
+  asyncWebAssembly: true,
+},
+```
+
+* memory object not found `export 'memory' (imported as 'memory') was not found in 'wasm-game-of-life/wasm_game_of_life_bg'`
+* change `import { memory } from "wasm-game-of-life/wasm_game_of_life_bg";` to `import { memory } from "wasm-game-of-life/wasm_game_of_life_bg.wasm";` in index.js
+
