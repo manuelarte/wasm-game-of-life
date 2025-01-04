@@ -84,7 +84,12 @@ To build use:
 
 > wasm-pack build
 
-To run it locally, go to the www folder
+(To be done only once):
+
+> npm init wasm-app www
+> cd www & npm install
+
+To run it locally, go to the `www` folder
 
 > npm run start
 
